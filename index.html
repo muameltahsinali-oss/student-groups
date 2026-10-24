@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مجموعات الطلاب</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>مجموعات الطلاب</h1>
+            <div id="status-container" class="status-container hidden">
+                <p>أنت منضم إلى <span id="user-team-name" class="highlight"></span></p>
+                <button id="leave-btn" class="btn btn-leave">مغادرة الفريق</button>
+            </div>
+            <div id="welcome-container" class="status-container">
+                <p>قم بالانضمام إلى فريق للبدء.</p>
+            </div>
+        </header>
+
+        <div class="grids">
+            <!-- Cards -->
+            <div class="card" id="card-mouamel">
+                <h2>فريق مؤمل</h2>
+                <ul class="members-list" id="list-مؤمل">
+                    <!-- Members logic populated here -->
+                </ul>
+                <button class="btn btn-join" onclick="joinTeam('مؤمل')">انضم للفريق</button>
+            </div>
+
+            <div class="card" id="card-ahmed">
+                <h2>فريق احمد عدي</h2>
+                <ul class="members-list" id="list-احمد عدي">
+                </ul>
+                <button class="btn btn-join" onclick="joinTeam('احمد عدي')">انضم للفريق</button>
+            </div>
+
+            <div class="card" id="card-faqar">
+                <h2>فريق فقار</h2>
+                <ul class="members-list" id="list-فقار">
+                </ul>
+                <button class="btn btn-join" onclick="joinTeam('فقار')">انضم للفريق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Name Input -->
+    <div id="join-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>أدخل اسمك</h3>
+            <p id="modal-team-name"></p>
+            <input type="text" id="student-name" placeholder="الاسم الكامل">
+            <div class="modal-actions">
+                <button class="btn btn-cancel" onclick="closeModal()">إلغاء</button>
+                <button class="btn btn-confirm" onclick="confirmJoin()">تأكيد الانضمام</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
